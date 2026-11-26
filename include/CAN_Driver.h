@@ -37,8 +37,7 @@ bool can_hw_tx_busy(void);
 /* Приём из очереди (заполняется прерыванием). */
 bool can_hw_rx_pop(can_frame_t *f);
 
-/* Состояние: bit0 BOFF, bit1 EWRN, [4:2] LEC (код последней ошибки);
- * счётчики потерь/переполнений — через can_hw_stats. */
+/* Счётчики обмена и код последней ошибки CAN. */
 typedef struct {
   uint32_t rx_frames;
   uint32_t rx_lost;     /* MSGLST объекта или переполнение очереди */
